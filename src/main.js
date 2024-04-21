@@ -2,21 +2,21 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import axios from 'axios';
+
 import { requestPixabay } from './js/pixabay-api';
 import { createMarkup } from './js/render-functions';
 import { gallery } from './js/render-functions';
 import { lightbox } from './js/render-functions';
 
-import axios from 'axios';
 const form = document.querySelector('.form');
 const loader = document.querySelector('.loader');
-const loadBtn = document.querySelector('.load-more');
+const loadBtn = document.querySelector('.loadBtn');
 
-loadBtn.addEventListener('click', loadMore);
 form.addEventListener('submit', handleSubmit);
+loadBtn.addEventListener('click', searchMore);
 
-let page = 1;
-
+let pageMax;
 function handleSubmit(event) {
   event.preventDefault();
   loader.style.opacity = 1;

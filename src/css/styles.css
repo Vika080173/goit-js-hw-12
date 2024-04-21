@@ -82,9 +82,10 @@ input::placeholder {
   padding-top: 4px;
 }
 /* Load-btn */
-/* .load-more-hidden {
-  display: none;
-} */
+.loadBtn {
+  /* display: none; */
+  opacity: 0;
+}
 
 .load-more {
   display: inline-block;
